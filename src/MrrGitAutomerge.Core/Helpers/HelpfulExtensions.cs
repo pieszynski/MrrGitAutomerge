@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MrrGitAutomerge.Core.Helpers
 {
-    public static class ProcessExtensions
+    public static class HelpfulExtensions
     {
         public static int ExitIn(this Process proc, int secTimeout)
         {
