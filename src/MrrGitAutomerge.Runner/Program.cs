@@ -19,7 +19,9 @@ namespace MrrGitAutomerge.Runner
             ILogger logger = new ConsoleLogger();
             MrrGitAutomergeUtil mrr = new MrrGitAutomergeUtil(logger);
 
-            var msgs = mrr.GetLastTenMessages(workDir);
+            //var msgs = mrr.GetLastTenMessages(workDir);
+            //var stat = mrr.GetRepoStatus(workDir);
+            //bool bCommited = mrr.CommitWorkToGit(workDir, "test msg", "README.md,src/MrrGitAutomerge.Core/Models/,src/MrrGitAutomerge.Runner/Program.cs".Split(',').ToList());
         }
     }
 }

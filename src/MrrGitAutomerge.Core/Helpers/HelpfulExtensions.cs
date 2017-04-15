@@ -29,5 +29,19 @@ namespace MrrGitAutomerge.Core.Helpers
                 return -1;
             }
         }
+
+        public static List<string> DataToList(this string dataOutput)
+        {
+            if (string.IsNullOrEmpty(dataOutput))
+                return null;
+
+            List<string> response = dataOutput.Split('\n')
+                .Where(w => null != w)
+                .Select(s => s.Trim())
+                .Where(w => !string.IsNullOrEmpty(w))
+                .ToList();
+
+            return response;
+        }
     }
 }

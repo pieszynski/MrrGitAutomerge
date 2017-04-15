@@ -46,8 +46,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CoreResource.resx</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\ProcessExtensions.cs" />
+    <Compile Include="Helpers\HelpfulExtensions.cs" />
     <Compile Include="Helpers\ProcessHelper.cs" />
+    <Compile Include="Models\FileStatusModel.cs" />
+    <Compile Include="Models\StatusResponse.cs" />
     <Compile Include="MrrGitAutomergeUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

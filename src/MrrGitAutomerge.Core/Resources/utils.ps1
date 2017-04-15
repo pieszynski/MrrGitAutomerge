@@ -1,5 +1,7 @@
 ﻿param (
-    $option
+    $option,
+    $message,
+    $files
 )
 
 $CODE = 0
@@ -20,8 +22,34 @@ function last10messages {
     exit $CODE
 }
 
+function repostatus {
+    push-location -path $ROOT
+    $STATS = ( git status -sb )
+    $CODE = $lastExitCode
+    $STATS
+    pop-location
+    exit $CODE
+}
+
+function commitwork {
+    if ($message -and $files) {
+        push-location -path $ROOT
+        echo "$message"
+        foreach ($relPath in ( $files -split ',' ) ) {
+            write-host "Adding to git: $relPath"
+            git add $relPath
+        }
+        write-host "Commiting with message: $message"
+        git commit -m"$message"
+        pop-location
+    }
+    exit $CODE
+}
+
 switch ( $option ) {
     "last10messages" { last10messages }
+    "repostatus" { repostatus }
+    "commitwork" { commitwork }
     default { 
         write-host "WorkDir: ${pwd}" -foregroundcolor gray
         write-host "Please provide an option." -foregroundcolor red
