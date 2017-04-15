@@ -31,6 +31,15 @@ function repostatus {
     exit $CODE
 }
 
+function listbranches {
+    push-location -path $ROOT
+    $LOCAL_BRANCHES = ( git branch --list )
+    $CODE = $lastExitCode
+    $LOCAL_BRANCHES
+    pop-location
+    exit $CODE
+}
+
 function commitwork {
     if ($message -and $files) {
         push-location -path $ROOT
@@ -50,6 +59,7 @@ switch ( $option ) {
     "last10messages" { last10messages }
     "repostatus" { repostatus }
     "commitwork" { commitwork }
+    "listbranches" { listbranches }
     default { 
         write-host "WorkDir: ${pwd}" -foregroundcolor gray
         write-host "Please provide an option." -foregroundcolor red

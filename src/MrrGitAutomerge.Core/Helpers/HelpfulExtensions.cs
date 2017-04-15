@@ -37,7 +37,7 @@ namespace MrrGitAutomerge.Core.Helpers
 
             List<string> response = dataOutput.Split('\n')
                 .Where(w => null != w)
-                .Select(s => s.Trim())
+                .Select(s => s.TrimEnd())
                 .Where(w => !string.IsNullOrEmpty(w))
                 .ToList();
 

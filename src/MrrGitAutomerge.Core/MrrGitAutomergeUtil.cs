@@ -78,7 +78,7 @@ namespace MrrGitAutomerge.Core
                 if (string.IsNullOrEmpty(item) || 4 > item.Length)
                     continue;
 
-                string fileRelPath = item.Substring(2);
+                string fileRelPath = item.Substring(3);
                 int arrowPos = fileRelPath.IndexOf(" ->");
                 if (0 < arrowPos)
                     fileRelPath = fileRelPath.Substring(0, arrowPos);
@@ -100,13 +100,32 @@ namespace MrrGitAutomerge.Core
                 return false;
 
             string dataOutput = this.RunUtilCommand(
-                workDir, 
-                "commitwork", 
-                message: message, 
+                workDir,
+                "commitwork",
+                message: message,
                 lFiles: lFiles
                 );
-            
+
             return null != dataOutput;
+        }
+
+        public List<string> ListBranches(string workDir)
+        {
+            string dataOutput = this.RunUtilCommand(
+                workDir,
+                "listbranches"
+                );
+
+            List<string> cmdData = dataOutput.DataToList();
+            if (null == cmdData || 0 == cmdData.Count)
+                return null;
+
+            List<string> response = cmdData
+                .Select(s => s.Trim())
+                .Select(s => s.StartsWith("* ") ? s.Substring(2) : s)
+                .ToList();
+
+            return response;
         }
 
         protected string RunUtilCommand(string workDir, string command, 

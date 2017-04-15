@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="MrrGitAutomerge.Core.Windows.CommitAndAutomergeDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MrrGitAutomerge.Core.Windows"
+             mc:Ignorable="d" 
+             d:DesignHeight="210" d:DesignWidth="600"
+             Loaded="CommitAndAutomerge_Loaded"
+             >
+    <Grid>
+        <Grid x:Name="AutomergePanel">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="304" Height="128">
+                <Label Content="Destination merge branch" HorizontalAlignment="Left" Margin="0,1,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="comboBox" Margin="0,27,0,0" VerticalAlignment="Top" ItemsSource="{Binding LocalBranches}" Text="{Binding MergeBranch, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="0"/>
+                <Button Content="Automerge" Width="140" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,63,0,0" Click="Automerge_Click"/>
+            </Grid>
+        </Grid>
+        <Grid x:Name="CommitPanel">
+            <Button Content="Commit" HorizontalAlignment="Right" Margin="0,26,10,0" VerticalAlignment="Top" Width="75" Height="20" Click="Commit_Click"/>
+            <ComboBox Margin="119,26,90,0" VerticalAlignment="Top" IsEditable="True" ItemsSource="{Binding LastMessages}" Text="{Binding MessageObj, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontFamily="Consolas"/>
+            <Label Content="GIT Automerge requires repository without uncommited changes. Please commit your work." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" />
+            <Label Content="Commit message:" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top"/>
+            <ListView Margin="10,54,10,10" ItemsSource="{Binding FilesToCommit}" Height="145">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel>
+                            <CheckBox IsChecked="{Binding IsChecked, Mode=TwoWay}" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                            <Label Content="{Binding GitStatus}" Foreground="{Binding ForeColor}" FontFamily="Consolas"/>
+                            <Label Content="{Binding RelPath}" Foreground="{Binding ForeColor}" FontFamily="Consolas"/>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <Grid x:Name="LoadingPanel">
+            <Grid HorizontalAlignment="Center" Height="60" Margin="0" VerticalAlignment="Center" Width="216">
+                <Label Content="{Binding LoadingTitle}" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top"/>
+                <ProgressBar Height="5" Margin="10,36,10,0" VerticalAlignment="Top" IsIndeterminate="True"/>
+            </Grid>
+        </Grid>
+        <Grid x:Name="InvalidStatePanel">
+            <Label Content="Invalid utils response. Please check log." Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Grid>
+    </Grid>
+</UserControl>
