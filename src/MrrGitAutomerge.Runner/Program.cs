@@ -17,7 +17,8 @@ namespace MrrGitAutomerge.Runner
         [STAThread]
         static void Main(string[] args)
         {
-            string workDir = Path.GetDirectoryName(typeof(Program).Assembly.Location);
+            //string workDir = Path.GetDirectoryName(typeof(Program).Assembly.Location);
+            string workDir = @"..\..\..\..\..\wt";
 
             ILogger logger = new ConsoleLogger();
             MrrGitAutomergeUtil mrr = new MrrGitAutomergeUtil(logger);

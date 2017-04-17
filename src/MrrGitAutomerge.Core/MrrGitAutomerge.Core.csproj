@@ -69,6 +69,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\mrr.ps1" />
     <None Include="Resources\utils.ps1" />
   </ItemGroup>
   <ItemGroup>

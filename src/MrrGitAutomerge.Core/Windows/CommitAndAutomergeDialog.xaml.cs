@@ -26,7 +26,8 @@ namespace MrrGitAutomerge.Core.Windows
             InvalidState,
             Loading,
             Automerge,
-            Commit
+            Commit,
+            Logs
         }
 
         protected readonly string WorkDir;
@@ -111,6 +112,7 @@ namespace MrrGitAutomerge.Core.Windows
             this.CommitPanel.Visibility = Visibility.Hidden;
             this.AutomergePanel.Visibility = Visibility.Hidden;
             this.InvalidStatePanel.Visibility = Visibility.Hidden;
+            this.LogPanel.Visibility = Visibility.Hidden;
 
             switch (state)
             {
@@ -122,6 +124,9 @@ namespace MrrGitAutomerge.Core.Windows
                     break;
                 case ThisDialogState.Loading:
                     this.LoadingPanel.Visibility = Visibility.Visible;
+                    break;
+                case ThisDialogState.Logs:
+                    this.LogPanel.Visibility = Visibility.Visible;
                     break;
                 case ThisDialogState.InvalidState:
                 default:
@@ -139,6 +144,11 @@ namespace MrrGitAutomerge.Core.Windows
                 case "d": return Brushes.Red;
                 default: return Brushes.Black;
             }
+        }
+
+        protected void WindowlogWriteLine(string text)
+        {
+            this.Model.LogWindowText += text + "\r\n";
         }
 
         private async void Commit_Click(object sender, RoutedEventArgs e)
@@ -163,11 +173,28 @@ namespace MrrGitAutomerge.Core.Windows
         private async void Automerge_Click(object sender, RoutedEventArgs e)
         {
             this.Model.LoadingTitle = CommitAndAutomergeViewModel.MERGING;
-            this.SetState(ThisDialogState.Loading);
+            this.SetState(ThisDialogState.Logs);
 
-            // TODO: Run MRR Merge Script
+            this.Model.LogWindowText = string.Empty;
+            this.Model.IsSubprocessRunning = true;
+            bool bStatus = await Task.Run(() => this.Mrr.RunAutomergeScript(
+                this.WorkDir,
+                this.Model.MergeBranch,
+                row => this.WindowlogWriteLine(row)
+                ));
 
-            this.ReloadAsync();
+            this.Model.IsSubprocessRunning = false;
+            this.WindowlogWriteLine(bStatus ? "Automerge successful." : "Automerge FAILED! Please check log for help.");
+            
+        }
+
+        private void LogWindow_ScrollChanged(object sender, ScrollChangedEventArgs e)
+        {
+            ScrollViewer sv = sender as ScrollViewer;
+            if (null != sv && 0 < e.ExtentHeightChange)
+            {
+                sv.ScrollToBottom();
+            }
         }
     }
 }

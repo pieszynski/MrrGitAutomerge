@@ -18,6 +18,7 @@ namespace MrrGitAutomerge.Core
 
         protected ILogger Logger;
         protected string UtilScript;
+        protected string AutomergeScript;
 
         public MrrGitAutomergeUtil(ILogger logger)
         {
@@ -32,10 +33,16 @@ namespace MrrGitAutomerge.Core
         protected void Init()
         {
             string dir = Path.GetDirectoryName(typeof(MrrGitAutomergeUtil).Assembly.Location);
+
             string utilScriptPath = Path.Combine(dir, "utils.ps1");
             File.WriteAllBytes(utilScriptPath, CoreResource.utils);
             if (File.Exists(utilScriptPath))
                 this.UtilScript = utilScriptPath;
+
+            string automergeScriptPath = Path.Combine(dir, "mrr.ps1");
+            File.WriteAllBytes(automergeScriptPath, CoreResource.mrr);
+            if (File.Exists(automergeScriptPath))
+                this.AutomergeScript = automergeScriptPath;
         }
 
         public List<string> GetLastTenMessages(string workDir)
@@ -126,6 +133,34 @@ namespace MrrGitAutomerge.Core
                 .ToList();
 
             return response;
+        }
+
+        public bool RunAutomergeScript(string workDir, string mergeBranch, Action<string> onLogRowCallback)
+        {
+            ProcessHelper ph = new ProcessHelper(this.Logger, onLogRowCallback);
+
+            string args = $"-MASTER_BRANCH \"{mergeBranch}\"";
+
+            string sCmd = $"RUN: {Path.GetFileName(this.AutomergeScript)} {args}";
+            this.Logger.Log(sCmd);
+            onLogRowCallback(sCmd);
+
+            Process proc = ph.RunPowershellScriptToLog(
+                this.AutomergeScript,
+                args,
+                workDir
+                );
+
+            int exitCode = proc.ExitIn(180);
+            if (0 != exitCode)
+            {
+                string sError = $"ERROR (exitCode:{exitCode}).";
+                this.Logger.Log(sError);
+                onLogRowCallback(sError);
+                return false;
+            }
+
+            return true;
         }
 
         protected string RunUtilCommand(string workDir, string command, 

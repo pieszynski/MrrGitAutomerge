@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace MrrGitAutomerge.Core.Models
 {
@@ -13,6 +14,20 @@ namespace MrrGitAutomerge.Core.Models
         public const string LOADING = "Loading";
         public const string COMMITING_CHANGES = "Commiting changes";
         public const string MERGING = "Merging";
+
+        private string _logWindowText;
+        public string LogWindowText
+        {
+            get { return this._logWindowText; }
+            set { this._logWindowText = value; this.Notify(nameof(LogWindowText)); }
+        }
+        private bool _isSubprocessRunning;
+        public bool IsSubprocessRunning
+        {
+            get { return this._isSubprocessRunning; }
+            set { this._isSubprocessRunning = value; this.Notify(nameof(IsSubprocessRunning)); this.Notify(nameof(SubprocessRunningVisibility)); }
+        }
+        public Visibility SubprocessRunningVisibility => this.IsSubprocessRunning ? Visibility.Visible : Visibility.Hidden;
 
         private string _loadingTitle;
         public string LoadingTitle
