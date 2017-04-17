@@ -24,10 +24,10 @@
             </Grid>
         </Grid>
         <Grid x:Name="CommitPanel">
-            <Button Content="Commit" HorizontalAlignment="Right" Margin="0,26,10,0" VerticalAlignment="Top" Width="75" Height="20" Click="Commit_Click"/>
-            <ComboBox Margin="119,26,90,0" VerticalAlignment="Top" IsEditable="True" ItemsSource="{Binding LastMessages}" Text="{Binding MessageObj, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontFamily="Consolas"/>
             <Label Content="GIT Automerge requires repository without uncommited changes. Please commit your work." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" />
             <Label Content="Commit message:" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top"/>
+            <ComboBox Margin="119,26,90,0" VerticalAlignment="Top" IsEditable="True" ItemsSource="{Binding LastMessages}" Text="{Binding MessageObj, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontFamily="Consolas"/>
+            <Button Content="Commit" HorizontalAlignment="Right" Margin="0,26,10,0" VerticalAlignment="Top" Width="75" Height="20" Click="Commit_Click"/>
             <ListView Margin="10,54,10,10" ItemsSource="{Binding FilesToCommit}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -47,7 +47,7 @@
             </Grid>
         </Grid>
         <Grid x:Name="InvalidStatePanel">
-            <Label Content="Invalid utils response. Please check log." Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Label Content="This might not be GIT repository.&#13;Invalid utils response. Please check log." TextBlock.TextAlignment="Center" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Grid>
     </Grid>
 </UserControl>

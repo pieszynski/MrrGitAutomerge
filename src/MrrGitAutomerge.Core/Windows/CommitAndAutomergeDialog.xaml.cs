@@ -35,6 +35,8 @@ namespace MrrGitAutomerge.Core.Windows
 
         protected CommitAndAutomergeViewModel Model = new CommitAndAutomergeViewModel();
 
+        public string SelectedMergeToBranch => this.Model.MergeBranch;
+
         public CommitAndAutomergeDialog(MrrGitAutomergeUtil automergeUtil, string workDir, string mergeToBranch)
         {
             if (null == automergeUtil)

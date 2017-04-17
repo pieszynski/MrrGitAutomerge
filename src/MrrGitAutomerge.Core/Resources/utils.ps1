@@ -26,6 +26,9 @@ function repostatus {
     push-location -path $ROOT
     $STATS = ( git status -sb )
     $CODE = $lastExitCode
+    if (0 -ne $CODE) {
+        write-host "WorkDir: ${pwd}"
+    }
     $STATS
     pop-location
     exit $CODE
