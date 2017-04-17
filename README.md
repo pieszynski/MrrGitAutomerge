@@ -4,6 +4,9 @@ Simplyfies merging with GIT to bare minimum.
 ## Requirements
 Application `git.exe` must be accesible in PATH. Extension assumes it can be run without specifying full path.
 
+## Visual Studio Extension
+Extension is available to download at this location: [Mrr GIT Automerge at Visual Studio Marketplace](https://marketplace.visualstudio.com/vsgallery/3d16624f-8bc4-4c36-a508-f70f8285aea7)
+
 ## Usage
 To use extension right-click on solution or project node i Solution Explorer. Click "Mrr GIT Automerge" menu item.
 
