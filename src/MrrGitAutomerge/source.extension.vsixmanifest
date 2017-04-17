@@ -4,6 +4,7 @@
     <Identity Id="MrrGitAutomerge.Pieszynski.172e98ce-7282-4fd0-9fd4-d240a5ccf65f" Version="1.0" Language="en-US" Publisher="Przemysław Pieszyński" />
     <DisplayName>MrrGitAutomerge</DisplayName>
     <Description xml:space="preserve">Simplyfies merging with GIT to bare minimum.</Description>
+    <License>LICENSE</License>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0,15.0]" />
