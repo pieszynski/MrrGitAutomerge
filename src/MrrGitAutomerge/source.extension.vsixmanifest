@@ -5,7 +5,7 @@
     <DisplayName>Mrr GIT Automerge</DisplayName>
     <Description xml:space="preserve">Simplyfies merging with GIT to bare minimum.</Description>
     <License>LICENSE</License>
-    <PreviewImage>screen2.png</PreviewImage>
+    <PreviewImage>screen2-vsixpreview.png</PreviewImage>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0)" />

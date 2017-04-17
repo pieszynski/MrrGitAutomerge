@@ -9,7 +9,7 @@ To use extension right-click on solution or project node i Solution Explorer. Cl
 
 ![Menu item in Solution Explorer](img/screen2.png)
 
-If there are uncommited changes in GIT repository you will be prompted to commit first.
+If there are uncommited changes in GIT repository you will be prompted to commit first. The commit message text box lists up to 10 last commit messages for convenience.
 
 ![Commit first window](img/screen0.png)
 
