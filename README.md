@@ -1,5 +1,5 @@
 # Mrr GIT Automerge
-Simplyfies merging with GIT to bare minimum.
+Simplifies merging with GIT to bare minimum.
 
 ## Requirements
 Application `git.exe` must be accesible in PATH. Extension assumes it can be run without specifying full path.

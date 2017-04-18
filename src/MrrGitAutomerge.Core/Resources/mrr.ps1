@@ -1,8 +1,8 @@
 param(
     $MASTER_BRANCH = 'master'
 )
-$BRANCH = ((git status -sb) -split '\n')[0] -replace '^## ([^.]*).*?$','$1'
-$HAS_MODS = ((git status -sb) -split '\n')[1]
+$BRANCH = ((git status -sb --ignore-submodules) -split '\n')[0] -replace '^## ([^.]*).*?$','$1'
+$HAS_MODS = ((git status -sb --ignore-submodules) -split '\n')[1]
 $MESSAGE = (git log -1 --pretty=%B)
 $MERGE_FLAG_FILE = "$(git rev-parse --show-toplevel)/.git/MERGE_HEAD"
 $MERGE_STATUS = $false
