@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MrrGitAutomerge", "MrrGitAutomerge\MrrGitAutomerge.csproj", "{7B4E1DD3-745E-46BB-90F1-B43463DAD71A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MrrGitAutomerge", "MrrGitAutomerge\MrrGitAutomerge.csproj", "{BC9C2C75-2837-4C86-B24B-C991BBA8F971}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MrrGitAutomerge.Core", "MrrGitAutomerge.Core\MrrGitAutomerge.Core.csproj", "{2D9C3A19-4EB0-4038-9ECC-61EAA8ED55E9}"
 EndProject
@@ -15,10 +15,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7B4E1DD3-745E-46BB-90F1-B43463DAD71A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7B4E1DD3-745E-46BB-90F1-B43463DAD71A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7B4E1DD3-745E-46BB-90F1-B43463DAD71A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7B4E1DD3-745E-46BB-90F1-B43463DAD71A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC9C2C75-2837-4C86-B24B-C991BBA8F971}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC9C2C75-2837-4C86-B24B-C991BBA8F971}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC9C2C75-2837-4C86-B24B-C991BBA8F971}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC9C2C75-2837-4C86-B24B-C991BBA8F971}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2D9C3A19-4EB0-4038-9ECC-61EAA8ED55E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2D9C3A19-4EB0-4038-9ECC-61EAA8ED55E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D9C3A19-4EB0-4038-9ECC-61EAA8ED55E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
