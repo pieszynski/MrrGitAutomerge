@@ -27,6 +27,9 @@ Then and only then automerge option will be available.
 
 Automerging may take a little time but all logs will be displayed in main window. In case it fails to automerge - unresolvable git auto-merge user will be able to see why merging failed without opening tool's output window.
 
+## Automerge script
+All automerging operations are executed within [mrr.ps1](src/MrrGitAutomerge.Core/Resources/mrr.ps1) script which can be run locally without any Visual Studio extension wrapper.
+
 ## Any problems?
 In case of any unpredictable behavior logs are shown in plugin's output window called "Mrr GIT Automerge".
 
