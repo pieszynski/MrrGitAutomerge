@@ -18,8 +18,8 @@ namespace MrrGitAutomerge.Content
             this.Title = "Mrr GIT Automerge";
             this.Caad = new CommitAndAutomergeDialog(automergeUtil, workDir, mergeToBranch);
             this.Content = this.Caad;
-            this.Width = 600 + 20;
-            this.Height = 210 + 40;
+            this.Width = 900 + 20;
+            this.Height = 410 + 40;
             this.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
             this.HasMaximizeButton = true;
