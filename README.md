@@ -9,8 +9,10 @@ Extension is available to download at this location: [Mrr GIT Automerge at Visua
 
 ## Version history
 
-* [v1.4 (latest)](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.4/MrrGitAutomerge.1.4.vsix)
-* [v1.3](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.3/MrrGitAutomerge.1.3.vsix)
+| Version | VS2017 | VS2015
+| --- | :---: | :---: |
+| [v1.4 (latest)](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.4/MrrGitAutomerge.1.4.vsix) | X | |
+| [v1.3](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.3/MrrGitAutomerge.1.3.vsix) | | X |
 
 ## Usage
 To use extension right-click on solution or project node i Solution Explorer. Click "Mrr GIT Automerge" menu item.
