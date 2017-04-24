@@ -24,7 +24,7 @@ function last10messages {
 
 function repostatus {
     push-location -path $ROOT
-    $STATS = ( git status -sb )
+    $STATS = ( git status -sb --ignore-submodules )
     $CODE = $lastExitCode
     if (0 -ne $CODE) {
         write-host "WorkDir: ${pwd}"
