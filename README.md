@@ -11,7 +11,9 @@ Extension is available to download at this location: [Mrr GIT Automerge at Visua
 
 | Version | VS2017 | VS2015
 | --- | :---: | :---: |
-| [v1.4 (latest)](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.4/MrrGitAutomerge.1.4.vsix) | X | |
+| [v1.6 (latest)](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.6/MrrGitAutomerge.1.6.vsix) | X | |
+| [v1.5](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.5/MrrGitAutomerge.1.5.vsix) | | X |
+| [v1.4](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.4/MrrGitAutomerge.1.4.vsix) | X | |
 | [v1.3](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.3/MrrGitAutomerge.1.3.vsix) | | X |
 
 ## Usage
@@ -31,6 +33,10 @@ Automerging may take a little time but all logs will be displayed in main window
 
 ## Automerge script
 All automerging operations are executed within [mrr.ps1](src/MrrGitAutomerge.Core/Resources/mrr.ps1) script which can be run locally without any Visual Studio extension wrapper.
+
+## ToDo
+
+* Mark files as development files (ignore local changes and do not commit them) with a click of a button: `git update-index --[no-]skip-worktree file` (`git ls-files -v` with 'S' status).
 
 ## Any problems?
 In case of any unpredictable behavior logs are shown in plugin's output window called "Mrr GIT Automerge".
