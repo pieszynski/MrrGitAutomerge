@@ -1,6 +1,10 @@
 # Mrr GIT Automerge
 Simplifies merging with GIT to bare minimum.
 
+| Branch | Build status |
+| --- | --- |
+| vsCross | ![](https://pieszynski.visualstudio.com/_apis/public/build/definitions/6473efc4-b692-43c1-ac5f-2d2861fa34b3/1/badge) |
+
 ## Requirements
 Application `git.exe` must be accesible in PATH. Extension assumes it can be run without specifying full path.
 
