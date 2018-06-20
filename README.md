@@ -15,7 +15,8 @@ Extension is available to download at this location: [Mrr GIT Automerge at Visua
 
 | Version | VS2017 | VS2015
 | --- | :---: | :---: |
-| [v1.7 (latest)](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.7/MrrGitAutomerge.1.7.vsix) | X | X |
+| [v1.8 (latest)](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.8/MrrGitAutomerge.1.8.vsix) | X | |
+| [v1.7](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.7/MrrGitAutomerge.1.7.vsix) | X | X |
 | [v1.6](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.6/MrrGitAutomerge.1.6.vsix) | X | |
 | [v1.5](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.5/MrrGitAutomerge.1.5.vsix) | | X |
 | [v1.4](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.4/MrrGitAutomerge.1.4.vsix) | X | |
