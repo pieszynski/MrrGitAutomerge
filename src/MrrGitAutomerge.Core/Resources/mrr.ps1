@@ -1,6 +1,10 @@
 param(
-    $MASTER_BRANCH = 'master'
+    $MASTER_BRANCH = 'master',
+    [int]$NO_PUSH = 0
 )
+
+[Console]::OutputEncoding = [Text.UTF8Encoding]::UTF8
+
 $BRANCH = ((git status -sb --ignore-submodules) -split '\n')[0] -replace '^## ([^.]*).*?$','$1'
 $HAS_MODS = ((git status -sb --ignore-submodules) -split '\n')[1]
 $MESSAGE = (git log -1 --pretty=%B)
@@ -70,5 +74,12 @@ if (Test-Path $MERGE_FLAG_FILE) {
     }
 }
 
-git checkout $BRANCH
-git push origin $MASTER_BRANCH
+if ($NO_PUSH -eq 0)
+{
+    git checkout $BRANCH
+    git push origin $MASTER_BRANCH
+}
+else 
+{
+    write-host "[WARN] git-push not executed as requested."
+}

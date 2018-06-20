@@ -41,6 +41,12 @@ namespace MrrGitAutomerge.Core.Models
             get { return this._mergeBranch; }
             set { this._mergeBranch = value; this.Notify(nameof(MergeBranch)); }
         }
+        private bool _noPush;
+        public bool NoPush
+        {
+            get { return this._noPush; }
+            set { this._noPush = value; this.Notify(nameof(NoPush)); }
+        }
         private object _messageObj;
         public object MessageObj
         {

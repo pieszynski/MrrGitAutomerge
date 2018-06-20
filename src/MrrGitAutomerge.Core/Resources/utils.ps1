@@ -4,6 +4,8 @@
     $files
 )
 
+[Console]::OutputEncoding = [Text.UTF8Encoding]::UTF8
+
 $CODE = 0
 $ROOT = ( git rev-parse --show-toplevel )
 
@@ -14,8 +16,16 @@ if ( !$? ) {
 }
 
 function last10messages {
-    push-location -path $ROOT   
-    $MESSAGE = ( ( git log -10 --pretty=%s ) -split '\n' ) | ? { $_.trim() -ne '' }
+    lastXmessages ( 10 )
+}
+
+function last40messages {
+    lastXmessages ( 40 )
+}
+
+function lastXmessages ( [int]$xm ) {
+    push-location -path $ROOT
+    $MESSAGE = ( ( git log -$xm --pretty=%s ) -split '\n' ) | ? { $_.trim() -ne '' }
     $CODE = $lastExitCode
     $MESSAGE
     pop-location
@@ -60,6 +70,7 @@ function commitwork {
 
 switch ( $option ) {
     "last10messages" { last10messages }
+    "last40messages" { last40messages }
     "repostatus" { repostatus }
     "commitwork" { commitwork }
     "listbranches" { listbranches }

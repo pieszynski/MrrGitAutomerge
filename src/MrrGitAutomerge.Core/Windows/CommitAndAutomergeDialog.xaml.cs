@@ -64,7 +64,7 @@ namespace MrrGitAutomerge.Core.Windows
             this.SetState(ThisDialogState.Loading);
             this.Model.LastMessages.Add("Loading messages...");
 
-            Task<List<string>> tMessages = Task.Run(() => this.Mrr.GetLastTenMessages(this.WorkDir));
+            Task<List<string>> tMessages = Task.Run(() => this.Mrr.GetLastFortyMessages(this.WorkDir));
             Task<StatusResponse> tStatus = Task.Run(() => this.Mrr.GetRepoStatus(this.WorkDir));
             Task<List<string>> tLocalBranches = Task.Run(() => this.Mrr.ListBranches(this.WorkDir));
 
@@ -182,6 +182,7 @@ namespace MrrGitAutomerge.Core.Windows
             bool bStatus = await Task.Run(() => this.Mrr.RunAutomergeScript(
                 this.WorkDir,
                 this.Model.MergeBranch,
+                this.Model.NoPush,
                 row => this.WindowlogWriteLine(row)
                 ));
 

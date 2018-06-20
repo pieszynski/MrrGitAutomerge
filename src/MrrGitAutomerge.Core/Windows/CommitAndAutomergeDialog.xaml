@@ -17,10 +17,15 @@
             </ScrollViewer>
         </Grid>
         <Grid x:Name="AutomergePanel">
-            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="304" Height="128">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="304" Height="146" Margin="148,41,148,22.778">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="39*"/>
+                    <RowDefinition Height="25*"/>
+                </Grid.RowDefinitions>
                 <Label Content="Destination merge branch" HorizontalAlignment="Left" Margin="0,1,0,0" VerticalAlignment="Top"/>
                 <ComboBox x:Name="comboBox" Margin="0,27,0,0" VerticalAlignment="Top" ItemsSource="{Binding LocalBranches}" Text="{Binding MergeBranch, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="0"/>
-                <Button Content="Automerge" Width="140" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,63,0,0" Click="Automerge_Click"/>
+                <CheckBox Content="No git-push after automerge" Margin="0,54,0,16.889" IsChecked="{Binding NoPush, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <Button Content="Automerge" Width="140" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="82,93,82,0" Click="Automerge_Click" Grid.RowSpan="2"/>
             </Grid>
         </Grid>
         <Grid x:Name="CommitPanel">

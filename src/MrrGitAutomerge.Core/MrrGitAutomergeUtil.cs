@@ -45,9 +45,11 @@ namespace MrrGitAutomerge.Core
                 this.AutomergeScript = automergeScriptPath;
         }
 
-        public List<string> GetLastTenMessages(string workDir)
+        public List<string> GetLastTenMessages(string workDir) => this.GetLastXMessages(workDir, 10);
+        public List<string> GetLastFortyMessages(string workDir) => this.GetLastXMessages(workDir, 40);
+        public List<string> GetLastXMessages(string workDir, int xm)
         {
-            string dataOutput = this.RunUtilCommand(workDir, "last10messages");
+            string dataOutput = this.RunUtilCommand(workDir, $"last{xm}messages");
             if (null == dataOutput)
                 return null;
 
@@ -135,11 +137,13 @@ namespace MrrGitAutomerge.Core
             return response;
         }
 
-        public bool RunAutomergeScript(string workDir, string mergeBranch, Action<string> onLogRowCallback)
+        public bool RunAutomergeScript(string workDir, string mergeBranch, bool noPush, Action<string> onLogRowCallback)
         {
             ProcessHelper ph = new ProcessHelper(this.Logger, onLogRowCallback);
 
             string args = $"-MASTER_BRANCH \"{mergeBranch}\"";
+            if (noPush)
+                args += " -NO_PUSH 1";
 
             string sCmd = $"RUN: {Path.GetFileName(this.AutomergeScript)} {args}";
             this.Logger.Log(sCmd);
