@@ -3,7 +3,7 @@ Simplifies merging with GIT to bare minimum.
 
 | Branch | Build status |
 | --- | --- |
-| vsCross | ![](https://pieszynski.visualstudio.com/_apis/public/build/definitions/6473efc4-b692-43c1-ac5f-2d2861fa34b3/1/badge) |
+| vsCross | ![](https://pieszynski.visualstudio.com/MrrGitAutomerge/_apis/build/status/MrrGitAutomerge-CI-vs2019) |
 
 ## Requirements
 Application `git.exe` must be accesible in PATH. Extension assumes it can be run without specifying full path.
@@ -13,14 +13,15 @@ Extension is available to download at this location: [Mrr GIT Automerge at Visua
 
 ## Version history
 
-| Version | VS2017 | VS2015
-| --- | :---: | :---: |
-| [v1.8 (latest)](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.8/MrrGitAutomerge.1.8.vsix) | X | |
-| [v1.7](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.7/MrrGitAutomerge.1.7.vsix) | X | X |
-| [v1.6](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.6/MrrGitAutomerge.1.6.vsix) | X | |
-| [v1.5](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.5/MrrGitAutomerge.1.5.vsix) | | X |
-| [v1.4](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.4/MrrGitAutomerge.1.4.vsix) | X | |
-| [v1.3](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.3/MrrGitAutomerge.1.3.vsix) | | X |
+| Version | VS2019 | VS2017 | VS2015
+| --- | :---: | :---: | :---: |
+| [v1.9 (latest)](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.9/MrrGitAutomerge.1.9.vsix) | X | | |
+| [v1.8](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.8/MrrGitAutomerge.1.8.vsix) | | X | |
+| [v1.7](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.7/MrrGitAutomerge.1.7.vsix) | | X | X |
+| [v1.6](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.6/MrrGitAutomerge.1.6.vsix) | | X | |
+| [v1.5](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.5/MrrGitAutomerge.1.5.vsix) | | | X |
+| [v1.4](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.4/MrrGitAutomerge.1.4.vsix) | | X | |
+| [v1.3](https://github.com/pieszynski/MrrGitAutomerge/releases/download/v1.3/MrrGitAutomerge.1.3.vsix) | | | X |
 
 ## Usage
 To use extension right-click on solution or project node i Solution Explorer. Click "Mrr GIT Automerge" menu item.
