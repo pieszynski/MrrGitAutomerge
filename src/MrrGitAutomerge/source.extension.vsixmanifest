@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="MrrGitAutomerge.Pieszynski.172e98ce-7282-4fd0-9fd4-d240a5ccf65f" Version="1.9" Language="en-US" Publisher="Przemysław Pieszyński" />
+    <Identity Id="MrrGitAutomerge.Pieszynski.172e98ce-7282-4fd0-9fd4-d240a5ccf65f" Version="1.10" Language="en-US" Publisher="Przemysław Pieszyński" />
     <DisplayName>Mrr GIT Automerge</DisplayName>
     <Description xml:space="preserve">Simplifies merging with GIT to bare minimum.</Description>
     <MoreInfo>https://github.com/pieszynski/MrrGitAutomerge</MoreInfo>
@@ -11,12 +11,12 @@
     <Tags>mrr git automerge auto merge</Tags>
   </Metadata>
   <Installation>
-    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[16.0]" />
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[16.0,17.0)" />
   </Installation>
   <Assets>
     <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
   </Assets>
   <Prerequisites>
-    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[16.0,17.0)" DisplayName="Visual Studio core editor" />
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[16.0,)" DisplayName="Visual Studio core editor" />
   </Prerequisites>
 </PackageManifest>
